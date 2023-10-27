@@ -4,6 +4,8 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
+import { Analytics } from "@vercel/analytics/react";
+
 const name = "Delano Francis";
 export const siteTitle = "Blog";
 
@@ -70,6 +72,7 @@ export default function Layout({
           <Link href="/">← Back to home</Link>
         </div>
       )}
+      <Analytics />
     </div>
   );
 }
