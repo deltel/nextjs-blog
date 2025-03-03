@@ -1,11 +1,12 @@
 ---
 title: "MySQL Triggers"
-date: "2025-01-05"
+date: "2025-03-02"
 ---
 
 ## Triggers
 
 A trigger is a named database object that is associated with a table, and that activates when a particular event occurs for the table.  
+It requires the TRIGGER privilege for the table associated with the trigger  
 [- MySQL Reference Manual](https://dev.mysql.com/doc/refman/8.0/en/create-trigger.html)
 
 We can use this mechanism to execute SQL statements whenever an **insert**, **update**, or **delete** event occurs.
@@ -30,7 +31,8 @@ FOR EACH ROW
 INSERT INTO table_logs VALUES(CONCAT('Insert ', NEW.email));
 ```
 
-The example above will record a message in a separate table whenever a new user is inserted. This can be used as a basic logging system.
+The example above will record a message in a separate table whenever a new user is inserted. This can be used as a basic logging system.  
+To create this trigger we would need the TRIGGER privilege on the _users_ table
 
 ### Deletion
 
